@@ -25,7 +25,7 @@ jobs:
         run: npx jsdoc -c jsdoc.json
 
       - name: Deploy Documentation
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-main@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs  # Publier la documentation générée
