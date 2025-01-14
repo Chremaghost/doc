@@ -1,4 +1,4 @@
-name: Generate and Deploy Docker Compose Documentation
+name: Generate and Deploy Docker Documentation
 
 on:
   push:
