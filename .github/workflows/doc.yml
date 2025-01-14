@@ -1,4 +1,4 @@
-name: Generate and Deploy Docker Documentation
+name: Generate and Deploy Docker Compose Documentation
 
 on:
   push:
@@ -25,10 +25,10 @@ jobs:
         run: npx jsdoc -c jsdoc.json
 
       - name: Deploy Documentation
-        uses: peaceiris/actions-main@v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs  # Publier la documentation générée
+          publish_dir: ./docs
 
   notify:
     runs-on: ubuntu-latest
