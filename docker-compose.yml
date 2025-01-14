@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  server:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./about.json:/about.json
+  
+  client_web:
+    build: ./automation-platform
+    ports:
+      - "8081:8081"
+    volumes:
+      - shared_volume:/app
+    depends_on:
+      - server
+
+volumes:
+  shared_volume:
